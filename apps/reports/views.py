@@ -19,4 +19,4 @@ class IndexView(TemplateView):
 		service_status = order_api.get_service_status()
 		print(service_status.parsed)
 		context = {'email': self.request.session['email']}
-		return render(self.request,"reports/index.html",context)sssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
+		return render(self.request,"reports/index.html",context)ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss
