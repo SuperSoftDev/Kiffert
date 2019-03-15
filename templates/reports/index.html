@@ -1,0 +1,86 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/report.css' %}">
+{% endblock %}
+{% block title %}Reports{% endblock %}
+
+{% block header_menu %}
+    <li class="dropdown"><a href="">Account</a></li>
+    <div class="dropdown-box">
+        <div class="dropdown-top">
+            <span></span>
+        </div>
+        <div class="dropdown-content">
+            <ul>
+                <li><a>{{email}}</a></li>
+                <li><a href="{% url 'account:index' %}">Account Settings</a></li>
+                <li><a href="{% url 'home:logout' %}">Logout</a></li>
+                <hr>
+                <li><a href='#'>Support</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="report-btn">
+    <img src="{% static 'img/report.png'%}" />
+    <p>All reports</p>
+</div>
+
+<div class="report-div">
+    <p class="main-title">Reports</p>
+    <div>
+        <p class="sub-title">Category</p>
+        <div class="sub-content">
+            <p> &#9900;   Report</p>
+            <p> &#9900;   Report</p>
+        </div>
+    </div>
+    <img class="report-setting" src="{% static 'img/setting.png'%}" />
+    <img class="report-close" src="{% static 'img/close.png'%}" />
+</div>
+
+<div class="filter-btn">
+    <img src="{% static 'img/filter.png'%}" />
+    <p>Filters</p>
+</div>
+
+<div class="filter-div">
+    <p class="main-title">Filters</p>
+    <div>
+        <p class="sub-title">Category</p>
+        <div class="sub-content">
+            <p> &#9900;   Criteria</p>
+            <p> &#9900;   Criteria</p>
+        </div>
+    </div>
+    <img class="filter-close" src="{% static 'img/close.png'%}" />
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+        $(".report-btn").click(function(){
+            $(".report-div").show();
+        })
+        $(".report-setting").click(function(){
+            location.href = "{% url 'report-settings:index' %}";
+        })
+        $(".report-close").click(function(){
+            $(".report-div").hide();
+        })
+
+        $(".filter-btn").click(function(){
+            $(".filter-div").show();
+        })
+        $(".filter-close").click(function(){
+            $(".filter-div").hide();
+        })
+    });
+</script>
+{% endblock script %}

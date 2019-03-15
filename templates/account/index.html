@@ -1,0 +1,80 @@
+{% extends 'base.html' %} 
+{% load static %} 
+
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/account.css' %}">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+{% endblock %}
+{% block title %}Account{% endblock %}
+
+{% block header_menu %}
+    <li><a href="{% url 'reports:index' %}">Reports</a></li>
+    <li class="dropdown"><a href="">Account</a></li>
+    <div class="dropdown-box">
+        <div class="dropdown-top">
+            <span></span>
+        </div>
+        <div class="dropdown-content">
+            <ul>
+                <li><a>{{email}}</a></li>
+                <li><a href='{% url 'account:index' %}'>Account Settings</a></li>
+                <li><a href="{% url 'home:logout' %}">Logout</a></li>
+                <hr>
+                <li><a href='#'>Support</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="account-content">
+    <p class="item-title">Account Tier</p>
+    <input />
+    <p class="item-title">Billing Information</p>
+    <input class="w50-input m-r-3"/>
+    <input class="w50-input m-l-3"/>
+    <input />
+</div>
+<div class="account-content">
+    <div id="store-content">
+        <div>
+            <div class="store-name">Store <i class="fas fa-caret-right"></i></div>
+            <div class="store-detail">
+                <div class="store-name-open">Store <i class="fas fa-caret-down"></i></div>
+                <div class="market-name">Marketplace <i class="fas fa-caret-down"></i></div>
+                <div class="api-key-div">
+                    <div class="p-r-10 w-50">
+                        <p class="item-title">API Key 1</p>
+                        <input />
+                    </div>
+                    <div class="p-l-10 w-50">
+                        <p class="item-title">API Key 2</p>
+                        <input />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="new-store">New Store <i class="fas fa-plus"></i></div>
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){       
+        $(".new-store").click(function(){
+            $("#store-content").append("<div><div class='store-name'>Store <i class='fas fa-caret-right'></i></div><div class='store-detail'><div class='store-name-open'>Store <i class='fas fa-caret-down'></i></div><div class='market-name'>Marketplace <i class='fas fa-caret-down'></i></div><div class='api-key-div'><div class='p-r-10 w-50'><p class='item-title'>API Key 1</p><input /></div><div class='p-l-10 w-50'><p class='item-title'>API Key 2</p><input /></div></div></div></div>");
+        })
+        $("div").on("click",".store-name",function(){
+            $(this).hide();
+            $(this).next().show();
+        })
+        $("div").on("click",".store-name-open",function(){
+            $(this).parent().hide();
+            $(this).parent().prev().show();
+        })
+    });
+</script>
+{% endblock script %}

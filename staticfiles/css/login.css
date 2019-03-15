@@ -1,0 +1,25 @@
+.login-content{
+    margin-top: 100px;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    border:5px solid rgb(42,58,104);
+    border-radius: 60px;
+    padding: 40px;
+    background-color: rgb(229,232,239);
+    color:rgb(42,58,104);
+    padding-bottom: 60px;
+}
+.section-title{
+    text-align: center;
+}
+.forgot-pass{
+    text-align: right;
+}
+.forgot-pass > a{
+    color:rgb(42,58,104);
+}
+.btn {
+    background-color: rgb(42,58,104);
+    padding:10px 50px 10px 50px;
+}

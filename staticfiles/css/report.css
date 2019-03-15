@@ -1,0 +1,93 @@
+.report-btn{
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    border:1px solid rgb(42,58,104);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    bottom: 30px;
+    left: 30px;
+    background-color: rgb(181,200,255);
+    color:black;
+    cursor: pointer;
+}
+.filter-btn{
+    width: 120px;
+    height: 120px;
+    position: fixed;
+    border:1px solid rgb(42,58,104);
+    border-radius: 10px;
+    padding: 10px;
+    text-align: center;
+    bottom: 30px;
+    right: 30px;
+    background-color: rgb(181,200,255);
+    color:black;
+    cursor: pointer;
+}
+.report-div{
+    display:none;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left:0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: rgb(238,238,238);
+    color:black;
+    border-right:1px solid black;
+}
+.report-setting-div{
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    left:0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: rgb(238,238,238);
+    color:black;
+    border-right:1px solid black;
+}
+.filter-div{
+    display:none;
+    width: 200px;
+    height: 100%;
+    position: fixed;
+    right:0px;
+    padding-left: 20px;
+    padding-top: 20px;
+    background-color: rgb(238,238,238);
+    color:black;
+    border-left:1px solid black;
+}
+.main-title{
+    font-size: 35px;
+    font-weight: bold;
+}
+.sub-title{
+    font-size: 25px;
+    font-weight: bold;
+}
+.sub-content{
+    padding-left: 20px;
+    font-size: 25px;
+}
+.report-setting{
+    position: fixed;
+    left: 20px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.report-close{
+    position: fixed;
+    left: 120px;
+    bottom: 20px;
+    cursor: pointer;
+}
+.filter-close{
+    position: fixed;
+    right: 120px;
+    bottom: 20px;
+    cursor: pointer;
+}

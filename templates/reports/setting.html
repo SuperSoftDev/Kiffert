@@ -1,0 +1,71 @@
+{% extends 'base.html' %} 
+{% load static %} 
+{% block extra_styles %}
+<link rel="stylesheet" href="{% static 'css/report.css' %}">
+{% endblock %}
+{% block title %}Reports{% endblock %}
+
+{% block header_menu %}
+    <li><a href="{% url 'reports:index' %}">Reports</a></li>
+    <li class="dropdown"><a href="">Account</a></li>
+    <div class="dropdown-box">
+        <div class="dropdown-top">
+            <span></span>
+        </div>
+        <div class="dropdown-content">
+            <ul>
+                <li><a>{{email}}</a></li>
+                <li><a href="{% url 'account:index' %}">Account Settings</a></li>
+                <li><a href="{% url 'home:logout' %}">Logout</a></li>
+                <hr>
+                <li><a href='#'>Support</a></li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+
+<div class="report-setting-div">
+    <p class="main-title">Data Sources</p>
+    <div>
+        <p class="sub-title">Store Name</p>
+        <div class="sub-content">
+            <p> &#9900;   API</p>
+            <p> &#9900;   File Upload</p>
+        </div>
+    </div>
+</div>
+
+<div class="filter-btn">
+    <img src="{% static 'img/filter.png'%}" />
+    <p>Filters</p>
+</div>
+
+<div class="filter-div">
+    <p class="main-title">Filters</p>
+    <div>
+        <p class="sub-title">Category</p>
+        <div class="sub-content">
+            <p> &#9900;   Criteria</p>
+            <p> &#9900;   Criteria</p>
+        </div>
+    </div>
+    <img class="filter-close" src="{% static 'img/close.png'%}" />
+</div>
+
+{% endblock content %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+
+        $(".filter-btn").click(function(){
+            $(".filter-div").show();
+        })
+        $(".filter-close").click(function(){
+            $(".filter-div").hide();
+        })
+    });
+</script>
+{% endblock script %}
